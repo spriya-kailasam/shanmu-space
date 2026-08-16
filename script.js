@@ -24,11 +24,6 @@ function loadArticleFile(folder, fileName, fileIndex) {
       const card = document.createElement('div');
       card.className = 'blog-card';
       
-      const heading = document.createElement('h3');
-      const titlePrefix = folder === 'TM' ? 'TM' : 'TR';
-      heading.textContent = `${titlePrefix}-${fileIndex}`;
-      card.appendChild(heading);
-      
       const contentContainer = document.createElement('div');
       
       // Split into paragraphs for readability
