@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spriya's Blog</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #34495e;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 14px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    nav button:hover {
+      background: #3d566e;
+    }
+    .tab-content {
+      display: none;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .about-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .about-section img {
+      width: 220px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+     .blog-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.blog-card h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+
+    h2 {
+      color: #2c3e50;
+    }
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    footer a {
+      color: #f1c40f;
+      text-decoration: none;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shanmu's space</h1>
+    <p>Sharing experiences, Legacy Modernization insights, and Reflections</p>
+  </header>
+
+  <nav>
+    <button onclick="showTab('about')">About Me</button>
+    <button onclick="showTab('technology')">Technology & Modernization</button>
+    <button onclick="showTab('thoughts')">Thoughts & Reflections</button>
+  </nav>
+
+<div id="about" class="tab-content active">
+  <h2>About Me</h2>
+  <div class="about-section">
+    <img src="shanmu-pic.jpg" alt="Spriya Kailasam">
+    <p>I am a continuous learner, passionate about identifying customer and business pain points and creating effective solutions. 
+       I believe in working as a true business partner rather than just a technology order taker. 
+       Writing has always been a joy for me, and I bring over 20 years of experience in custody banking software. 
+       Beyond my professional journey, I am a dedicated yoga and chanting practitioner, with a lifelong love for teaching.</p>
+  </div>
+</div>
+
+
+<div id="technology" class="tab-content">
+  <h2>Technology & Modernization Articles</h2>
+  <div id="technology-articles">
+    <!-- Articles will be dynamically loaded here -->
+  </div>
+  <div class="blog-card" id="no-technology-articles">
+    <h3>No Articles Yet</h3>
+    <p>Technology & Modernization articles will appear here. Add TM-1.txt, TM-2.txt, etc. to the TM folder to display articles.</p>
+  </div>
+</div>
+
+<div id="thoughts" class="tab-content">
+  <h2>Thoughts & Reflections Articles</h2>
+  <div id="thoughts-articles">
+    <!-- Articles will be dynamically loaded here -->
+  </div>
+  <div class="blog-card" id="no-thoughts-articles">
+    <h3>No Articles Yet</h3>
+    <p>Thoughts & Reflections articles will appear here. Add TR-1.txt, TR-2.txt, etc. to the TR folder to display articles.</p>
+  </div>
+</div>
+
+  <footer>
+    <p>Contact: Mobile - <a href="tel:9940215647">9940215647</a> | 
+       Email - <a href="mailto:spriya.kailasam@gmail.com">spriya.kailasam@gmail.com</a></p>
+    <p>&copy; 2026 Spriya's Blog</p>
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+ <script src="script.js"></script>
+
+
+</body>
+</html>
