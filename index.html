@@ -35,6 +35,10 @@
     nav button:hover {
       background: #3d566e;
     }
+    nav button.active {
+      background: #f1c40f;
+      color: #2c3e50;
+    }
     .tab-content {
       display: none;
       padding: 30px;
@@ -108,13 +112,12 @@
   </header>
 
   <nav>
-    <button onclick="showTab('about')">About Me</button>
+    <button onclick="showTab('about')" class="active">A Little About Me</button>
     <button onclick="showTab('technology')">Technology & Modernization</button>
     <button onclick="showTab('thoughts')">Thoughts & Reflections</button>
   </nav>
 
 <div id="about" class="tab-content active">
-  <h2>About Me</h2>
   <div class="about-section">
     <img src="shanmu-pic.jpg" alt="Spriya Kailasam">
     <p>Welcome to my corner of the web! Writing has always been a source of genuine joy for me, and this blog serves as a home for my thoughts, lessons, and continuous learning journey.</p>
@@ -125,7 +128,6 @@
 
 
 <div id="technology" class="tab-content">
-  <h2>Technology & Modernization Articles</h2>
   <div id="technology-articles">
     <!-- Articles will be dynamically loaded here -->
   </div>
@@ -136,7 +138,6 @@
 </div>
 
 <div id="thoughts" class="tab-content">
-  <h2>Thoughts & Reflections Articles</h2>
   <div id="thoughts-articles">
     <!-- Articles will be dynamically loaded here -->
   </div>
@@ -157,6 +158,10 @@
       const tabs = document.querySelectorAll('.tab-content');
       tabs.forEach(tab => tab.classList.remove('active'));
       document.getElementById(tabId).classList.add('active');
+      
+      const buttons = document.querySelectorAll('nav button');
+      buttons.forEach(button => button.classList.remove('active'));
+      event.target.classList.add('active');
     }
   </script>
  <script src="script.js?v=3"></script>
